@@ -1,0 +1,13 @@
+.scrollableSlide{
+  /*margin-top: -120vh !important;*/
+  margin-top: -10vh !important;;
+  height: 80vh;
+  padding: 0 !important;;
+  overflow: auto;
+  /*margin:'-10vh auto', transition:'margin 2s ease-in', transitionDelay:'1s'*/
+}
+
+.example{
+  width: 100vh;
+  height: 100vh;
+}
