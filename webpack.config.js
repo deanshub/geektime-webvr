@@ -5,7 +5,7 @@ var path = require('path')
 var NODE_ENV = JSON.stringify(process.env.NODE_ENV || 'development');
 
 var plugins = [
-  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+  // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   new webpack.DefinePlugin({
     'process.env': { NODE_ENV }
   }),
@@ -36,20 +36,20 @@ var reactPlugins =[
 module.exports = {
   context: path.join(__dirname, './client'),
   entry: {
-    jsx: './index.js',
     html: './index.html',
-    vendor: [
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router',
-      'react-router-redux',
-      'redux'
-    ]
+    bundle: './index.js',
+    // vendor: [
+    //   'react',
+    //   'react-dom',
+    //   'react-redux',
+    //   'react-router',
+    //   'react-router-redux',
+    //   'redux'
+    // ]
   },
   output: {
     path: path.join(__dirname, './static'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   module: {
     loaders: [
@@ -60,7 +60,7 @@ module.exports = {
           plugins: NODE_ENV==='"development"'?[ reactPlugins ]:[]
         },
         exclude: /node_modules/,
-        include: __dirname
+        // include: __dirname
       },
       {
         test: /\.html$/,

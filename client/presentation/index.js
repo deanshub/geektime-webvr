@@ -172,7 +172,7 @@ export default class Presentation extends React.Component {
 
 
           <Slide className={style.example} transition={["fade"]} bgColor="primary" textColor="secondary">
-            <iframe id="viewer" name="viewer" width="100%" height="100%" allowfullscreen="" allowvr="" onmousewheel="" src="https://threejs.org/examples/webgl_animation_scene.html" />
+            <iframe id="viewer" name="viewer" width="100%" height="100%" allowFullScreen src="https://threejs.org/examples/webgl_animation_scene.html" />
           </Slide>
 
           <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
