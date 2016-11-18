@@ -4,6 +4,22 @@ var path = require('path')
 
 var NODE_ENV = JSON.stringify(process.env.NODE_ENV || 'development');
 
+var plugins = [
+  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+  new webpack.DefinePlugin({
+    'process.env': { NODE_ENV }
+  }),
+  new webpack.NoErrorsPlugin(),
+];
+
+if (NODE_ENV!=='"development"'){
+  plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compressor: {
+      warnings: false
+    }
+  }));
+}
+
 var reactPlugins =[
   "react-transform", {
     transforms: [{
@@ -41,7 +57,7 @@ module.exports = {
         test: /\.js$/,
         loader: "babel",
         query: {
-          plugins: NODE_ENV==='development'?[ reactPlugins ]:[]
+          plugins: NODE_ENV==='"development"'?[ reactPlugins ]:[]
         },
         exclude: /node_modules/,
         include: __dirname
@@ -55,7 +71,7 @@ module.exports = {
         include: /node_modules/,
         loaders: [
           'style',
-          'raw',
+          'css',
         ]
       },
       {
@@ -68,7 +84,7 @@ module.exports = {
         ]
       },
       {
-         test: /\.svg$/,
+         test: /\.svg(\?.*)?$/,
          loader: "url?limit=10000&mimetype=image/svg+xml",
          include: path.join(__dirname, "client", "assets")
        }, {
@@ -84,6 +100,14 @@ module.exports = {
          loader: "url?limit=8192&mimetype=image/jpg",
          include: path.join(__dirname, "client", "assets")
        },
+       {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
+      }
     ],
   },
   resolve: {
@@ -94,18 +118,7 @@ module.exports = {
       autoprefixer: true
     })
   ],
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV }
-    }),
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    }),
-  ],
+  plugins,
   devServer: {
     contentBase: './client',
     hot: true

@@ -11,3 +11,16 @@
   width: 100vh;
   height: 100vh;
 }
+
+.list{
+  list-style-type: square;
+}
+
+.list>li{
+  font-size: 2rem !important;
+}
+
+.fullSize{
+  width: 100vw;
+  height: 100vh;
+}
