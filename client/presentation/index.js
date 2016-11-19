@@ -69,7 +69,7 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom"]} transitionDuration={500}>
-          <Slide transition={["zoom"]} bgColor="primary">
+          <Slide style={{marginTop:'-5vh'}} transition={["zoom"]} bgColor="primary">
             <Heading size={1} fit lineHeight={1} textColor="tertiary">
               Introduction to
             </Heading>
@@ -91,18 +91,19 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary" notes="<ul><li>Architect @ Sisense</li></ul>">
-            <Image src={images.me.replace("/", "")} margin="0px auto 40px" height="35vh"/>
-            <Heading size={4} caps margin={10}>
+            <Image src={images.me.replace("/", "")} margin="0px auto 40px" height="40vh"/>
+            <Heading size={4} margin={10} textColor="fourth">
               <Link textColor="fourth" href="https://github.com/deanshub">
                 <Icon name="github"/>
               </Link>
               <Link textColor="fourth" href="https://twitter.com/deanshub">
                 <Icon name="twitter"/>
               </Link>
+              deanshub
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
+          <Slide transition={["zoom", "fade"]} style={{marginTop:'-5vh'}} bgColor="primary" notes="<ul><li>more then 100 headsets</li><li>GearVR\ Google Daydream\ playstation VR</li><li></li></ul>">
             <Heading caps fit>Current state of VR</Heading>
             <Layout>
               <Fill>
@@ -138,26 +139,18 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["fade"]} bgImage={images.room.replace("/", "")} bgDarken={0.75} notes="<ul><li>Expensive</li><li>Wife</li><li></li></ul>">
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="secondary">
-                laptop + GPU
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Monitors + Monitors mount
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="secondary">
-                Graphics amplifier
-              </Heading>
-            </Appear>
-            <Appear fid="4">
-              <Heading size={1} caps fit textColor="tertiary">
-                Oculus rift
-              </Heading>
-            </Appear>
+            <Heading size={1} caps fit textColor="secondary">
+              laptop + GPU
+            </Heading>
+            <Heading size={1} caps fit textColor="tertiary">
+              Monitors + Monitors mount
+            </Heading>
+            <Heading size={1} caps fit textColor="secondary">
+              Graphics amplifier
+            </Heading>
+            <Heading size={1} caps fit textColor="tertiary">
+              Oculus rift
+            </Heading>
           </Slide>
 
           <Slide transition={["fade"]} bgImage={images.uvsu.replace("/", "")}>
@@ -206,12 +199,11 @@ export default class Presentation extends React.Component {
               What is WebVR?
             </Heading>
             <List textColor="secondary" size={1}>
-              <Appear><ListItem>Javascript API that allows communication straight to the VR hardware</ListItem></Appear>
+              <Appear><ListItem>Browser API that allows communication straight to the VR hardware</ListItem></Appear>
               <Appear><ListItem>Render frame for each eye sepparatly</ListItem></Appear>
               <Appear><ListItem>Supports 90fps</ListItem></Appear>
               <Appear><ListItem>Currently available only in Firefox nightly & certain chromium builds</ListItem></Appear>
               <Appear><ListItem><a href="https://iswebvrready.org">State of WebVR site</a></ListItem></Appear>
-              <Appear><ListItem>three.js & aframe supports it</ListItem></Appear>
               <Appear><ListItem><a href="https://webvr.info">More Details can be found in this link</a></ListItem></Appear>
             </List>
           </Slide>
@@ -299,18 +291,18 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary">
+          <Slide transition={["slide"]} bgColor="primary" notes="<ul><li>obj\ json geometry</li><li></li></ul>">
             <Heading caps fit size={1} textColor="tertiary">
               What can we do with this?
             </Heading>
             <List textColor="secondary" size={1}>
               <ListItem>Object + Material</ListItem>
-              <ListItem>panoramic images | 360° images\videos</ListItem>
+              <ListItem>panoramic images | <Link href="https://threejs.org/examples/?q=panorama#webgl_panorama_equirectangular">360° images</Link>\<Link href="https://threejs.org/examples/?q=panorama#webgl_video_panorama_equirectangular">videos</Link></ListItem>
               <ListItem>Interactions & Events</ListItem>
               <ListItem>Gamepad API</ListItem>
               <ListItem><Link href="https://chrome.google.com/webstore/detail/webvr-api-emulation/gbdnpaebafagioggnhkacnaaahpiefil">WebVr extension debugger</Link></ListItem>
               <ListItem><a href="https://medium.com/@clayallsopp/a-journey-to-virtual-reality-with-react-6e3b86140a63#.wl607l18y">A Journey To Virtual Reality with React</a></ListItem>
-              <ListItem>Sisense Example</ListItem>
+              <ListItem>Sisense</ListItem>
             </List>
           </Slide>
 
@@ -337,6 +329,15 @@ export default class Presentation extends React.Component {
               <Quote>ReactVR is the easiest way to build VR experiences</Quote>
               <Cite>Someone from the future</Cite>
             </BlockQuote>
+          </Slide>
+
+          <Slide transition={["zoom"]} bgColor="secondary">
+            <Heading fit size={1} textColor="tertiary">
+              Thanks
+            </Heading>
+            <Heading fit size={1} textColor="tertiary">
+              <Link href="http://webvr.shubapp.com">webvr.shubapp.com</Link>
+            </Heading>
           </Slide>
 
         </Deck>
