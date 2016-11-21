@@ -69,14 +69,14 @@ export default class Presentation extends React.Component {
     return (
       <Spectacle theme={theme}>
         <Deck transition={["zoom"]} transitionDuration={500}>
-          <Slide style={{marginTop:'-5vh'}} transition={["zoom"]} bgColor="primary">
-            <Heading size={1} fit lineHeight={1} textColor="tertiary">
+          <Slide style={{marginTop:'-5vh'}} transition={["zoom"]} bgColor="tertiary">
+            <Heading size={1} fit lineHeight={1} textColor="primary">
               Introduction to
             </Heading>
             <Heading size={1} fit lineHeight={1} textColor="fifth">
               WebVR
             </Heading>
-            <Heading size={1} fit textColor="tertiary">
+            <Heading size={1} fit textColor="primary">
               + an experiment with react and VR
             </Heading>
             <Heading size={1} fit caps textColor="fifth">
@@ -84,13 +84,13 @@ export default class Presentation extends React.Component {
             </Heading>
             {/**
               <Link href="https://github.com/FormidableLabs/spectacle">
-              <Text bold caps textColor="tertiary">View on Github</Text>
+              <Text bold caps textColor="primary">View on Github</Text>
             </Link>
             **/}
             <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary" notes="<ul><li>Architect @ Sisense</li></ul>">
+          <Slide transition={["slide"]} bgColor="tertiary" notes="<ul><li>Architect @ Sisense</li></ul>">
             <Image src={images.me.replace("/", "")} margin="0px auto 40px" height="40vh"/>
             <Heading size={4} margin={10} textColor="fourth">
               <Link textColor="fourth" href="https://github.com/deanshub">
@@ -103,15 +103,15 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom", "fade"]} style={{marginTop:'-5vh'}} bgColor="primary" notes="<ul><li>more then 100 headsets</li><li>GearVR\ Google Daydream\ playstation VR</li><li></li></ul>">
-            <Heading caps fit>Current state of VR</Heading>
+          <Slide transition={["zoom", "fade"]} style={{marginTop:'-5vh'}} bgColor="tertiary" notes="<ul><li>more then 100 headsets</li><li>GearVR\ Google Daydream\ playstation VR</li><li></li></ul>">
+            <Heading caps fit textColor="primary">Current state of VR</Heading>
             <Layout>
               <Fill>
                 <Image src={images.rift.replace("/", "")} margin="0px auto 40px" height="20vh"/>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                <Heading size={4} caps textColor="fourth" bgColor="white" margin={10}>
                   Oculus Rift
                 </Heading>
-                <List className={style.list}>
+                <List className={style.list} textColor="fourth">
                   <ListItem>GPU: GeForce GTX 970 or AMD Radeon R9 290 or better</ListItem>
                   <ListItem>CPU: Intel Core i5 4590 or greater</ListItem>
                   <ListItem>RAM: 8GB or more</ListItem>
@@ -121,10 +121,10 @@ export default class Presentation extends React.Component {
               </Fill>
               <Fill>
                 <Image src={images.vive.replace("/", "")} margin="0px auto 40px" height="20vh"/>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
+                <Heading size={4} caps textColor="fourth" bgColor="white" margin={10}>
                   HTC Vive
                 </Heading>
-                <List className={style.list}>
+                <List className={style.list} textColor="fourth">
                   <ListItem>GPU: Nvidia GeForce GTX 970, AMD Radeon R9 290 equivalent or better</ListItem>
                   <ListItem>CPU: Intel i5-4590, AMD FX 8350 equivalent or better</ListItem>
                   <ListItem>RAM: 4 GB or more</ListItem>
@@ -139,13 +139,13 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["fade"]} bgImage={images.room.replace("/", "")} bgDarken={0.75} notes="<ul><li>Expensive</li><li>Wife</li><li></li></ul>">
-            <Heading size={1} caps fit textColor="secondary">
+            <Heading size={1} caps fit textColor="fourth">
               laptop + GPU
             </Heading>
             <Heading size={1} caps fit textColor="tertiary">
               Monitors + Monitors mount
             </Heading>
-            <Heading size={1} caps fit textColor="secondary">
+            <Heading size={1} caps fit textColor="fourth">
               Graphics amplifier
             </Heading>
             <Heading size={1} caps fit textColor="tertiary">
@@ -156,7 +156,7 @@ export default class Presentation extends React.Component {
           <Slide transition={["fade"]} bgImage={images.uvsu.replace("/", "")}>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
+          <Slide transition={["fade"]} bgColor="tertiary" textColor="fourth">
             <Image src={images.html5.replace("/", "")} margin="0px auto 40px" height="20vh"/>
             <Appear><Image src={images.webgl.replace("/", "")} margin="0px auto 40px" height="20vh"/></Appear>
             <Appear><Image src={images.three.replace("/", "")} margin="0px auto 40px" height="20vh"/></Appear>
@@ -164,11 +164,11 @@ export default class Presentation extends React.Component {
 
 
 
-          <Slide className={style.example} transition={["fade"]} bgColor="primary" textColor="secondary">
+          <Slide className={style.example} transition={["fade"]} bgColor="tertiary" textColor="fourth">
             <iframe id="viewer" name="viewer" width="100%" height="100%" allowFullScreen src="https://threejs.org/examples/webgl_animation_scene.html" />
           </Slide>
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
               lang="html"
               source={require("raw!../assets/three.example")}
@@ -176,29 +176,29 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
+          <Slide transition={["fade"]} bgColor="tertiary" textColor="fourth">
             <Image src={images.html5.replace("/", "")} margin="0px auto 40px" height="20vh"/>
             <Image src={images.webgl.replace("/", "")} margin="0px auto 40px" height="20vh"/>
             <Image src={images.three.replace("/", "")} margin="0px auto 40px" height="20vh"/>
             <Appear><Image src={images.aframe.replace("/", "")} margin="0px auto 40px" height="20vh"/></Appear>
           </Slide>
 
-          <Slide className={style.example} transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide className={style.example} transition={["zoom", "fade"]} bgColor="tertiary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <iframe id="exampleIframe" width="100%" height="100%" allowFullScreen scrolling="no" src="https://aframe.io/aframe/examples/boilerplate/hello-world/"></iframe>
           </Slide>
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Slide transition={["zoom", "fade"]} bgColor="tertiary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
             <CodePane
               lang="html"
               source={require("raw!../assets/aframe.example")}
               />
           </Slide>
 
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
+          <Slide transition={["slide", "spin"]} bgColor="tertiary">
+            <Heading caps fit size={1} textColor="primary">
               What is WebVR?
             </Heading>
-            <List textColor="secondary" size={1}>
+            <List textColor="fourth" size={1}>
               <Appear><ListItem>Browser API that allows communication straight to the VR hardware</ListItem></Appear>
               <Appear><ListItem>Render frame for each eye sepparatly</ListItem></Appear>
               <Appear><ListItem>Supports 90fps</ListItem></Appear>
@@ -208,30 +208,30 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary">
+          <Slide transition={["slide"]} bgColor="tertiary">
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor="tertiary" bgColor="fifth" margin={10}>
+                <Heading size={4} caps textColor="primary" bgColor="fifth" margin={10}>
                   Apps
                 </Heading>
                 <Layout>
                   <Fill>
-                    <Appear id="3"><Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                    <Appear id="3"><Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                       React Aframe
                     </Heading></Appear>
                     <Layout>
                       <Fill>
-                        <Appear id="2"><Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                        <Appear id="2"><Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                           Aframe
                         </Heading></Appear>
                         <Layout>
                           <Fill>
-                            <Appear id="1"><Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                            <Appear id="1"><Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                               Three.js
                             </Heading></Appear>
                             <Layout>
                               <Fill>
-                                <Heading size={4} textColor="tertiary" bgColor="fourth" margin={10}>
+                                <Heading size={4} textColor="primary" bgColor="fourth" margin={10}>
                                   WebVR
                                 </Heading>
                               </Fill>
@@ -242,22 +242,22 @@ export default class Presentation extends React.Component {
                     </Layout>
                   </Fill>
                   <Fill>
-                    <Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                    <Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                       React Aframe
                     </Heading>
                     <Layout>
                       <Fill>
-                        <Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                        <Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                           Aframe
                         </Heading>
                         <Layout>
                           <Fill>
-                            <Heading size={4} textColor="tertiary" bgColor="fifth" margin={10}>
+                            <Heading size={4} textColor="primary" bgColor="fifth" margin={10}>
                               Three.js
                             </Heading>
                             <Layout>
                               <Fill>
-                                <Heading size={4} textColor="tertiary" bgColor="fourth" margin={10}>
+                                <Heading size={4} textColor="primary" bgColor="fourth" margin={10}>
                                   WebGL
                                 </Heading>
                               </Fill>
@@ -272,7 +272,7 @@ export default class Presentation extends React.Component {
             </Layout>
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor="tertiary" bgColor="fourth" margin={10}>
+                <Heading size={4} caps textColor="primary" bgColor="fourth" margin={10}>
                   Browser
                 </Heading>
                 <Layout style={{marginTop:'8vh'}}>
@@ -291,11 +291,11 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary" notes="<ul><li>obj\ json geometry</li><li></li></ul>">
-            <Heading caps fit size={1} textColor="tertiary">
+          <Slide transition={["slide"]} bgColor="tertiary" notes="<ul><li>obj\ json geometry</li><li></li></ul>">
+            <Heading caps fit size={1} textColor="primary">
               What can we do with this?
             </Heading>
-            <List textColor="secondary" size={1}>
+            <List textColor="fourth" size={1}>
               <ListItem>Object + Material</ListItem>
               <ListItem>panoramic images | <Link href="https://threejs.org/examples/?q=panorama#webgl_panorama_equirectangular">360° images</Link>\<Link href="https://threejs.org/examples/?q=panorama#webgl_video_panorama_equirectangular">videos</Link></ListItem>
               <ListItem>Interactions & Events</ListItem>
@@ -306,17 +306,17 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary" className={style.fullSize} bgImage={images.dashboard.replace("/", "")}>
+          <Slide transition={["slide"]} bgColor="tertiary" className={style.fullSize} bgImage={images.dashboard.replace("/", "")}>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary" bgImage={images.scr.replace("/", "")}>
+          <Slide transition={["slide"]} bgColor="tertiary" bgImage={images.scr.replace("/", "")}>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
+          <Slide transition={["slide"]} bgColor="tertiary">
+            <Heading caps fit size={1} textColor="primary">
               Next phase
             </Heading>
-            <List textColor="secondary" size={1}>
+            <List textColor="fourth" size={1}>
               <ListItem>Chrome release for mobile</ListItem>
               <ListItem>ReactVR</ListItem>
               <ListItem>Caramel browser</ListItem>
@@ -324,18 +324,18 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="secondary">
+          <Slide transition={["slide"]} bgColor="fourth">
             <BlockQuote>
               <Quote>ReactVR is the easiest way to build VR experiences</Quote>
               <Cite>Someone from the future</Cite>
             </BlockQuote>
           </Slide>
 
-          <Slide transition={["zoom"]} bgColor="secondary">
-            <Heading fit size={1} textColor="tertiary">
+          <Slide transition={["zoom"]} bgColor="fourth">
+            <Heading fit size={1} textColor="primary">
               Thanks
             </Heading>
-            <Heading fit size={1} textColor="tertiary">
+            <Heading fit size={1} textColor="primary">
               <Link href="http://webvr.shubapp.com">webvr.shubapp.com</Link>
             </Heading>
           </Slide>
